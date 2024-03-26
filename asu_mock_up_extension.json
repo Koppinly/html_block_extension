@@ -1,1 +1,77 @@
-
+{
+  "plugin_type": "widget",
+  "name": "ASU Mock Up",
+  "edit_page_url": "https://dev01-na01-asuentpart.demandware.net/s/ASU/colleges-and-programs/programs-and-centers/pat-tillman-veterans-center-CA101960.html",
+  "form_schema": [
+    {
+      "default_value": "",
+      "field_type": "text",
+      "name": "paragraph_text",
+      "options": null,
+      "label": "Paragraph Text"
+    },
+    {
+      "default_value": "",
+      "field_type": "text",
+      "name": "image_src_1",
+      "options": null,
+      "label": "Image Source 1"
+    },
+    {
+      "default_value": "",
+      "field_type": "text",
+      "name": "title_1",
+      "options": null,
+      "label": "Title 1"
+    },
+    {
+      "default_value": "test",
+      "field_type": "multi_text",
+      "name": "description_1",
+      "options": null,
+      "label": "Description 1"
+    },
+    {
+      "default_value": "",
+      "field_type": "text",
+      "name": "image_src_2",
+      "options": null,
+      "label": "Source 2"
+    },
+    {
+      "default_value": "",
+      "field_type": "text",
+      "name": "title_2",
+      "options": null,
+      "label": "Title 2"
+    },
+    {
+      "default_value": "",
+      "field_type": "multi_text",
+      "name": "description_2",
+      "options": null,
+      "label": "Description 2"
+    },
+    {
+      "default_value": "",
+      "field_type": "text",
+      "name": "button_2",
+      "options": null,
+      "label": "button 2"
+    },
+    {
+      "default_value": "",
+      "field_type": "text",
+      "name": "button_1",
+      "options": null,
+      "label": "button 1"
+    }
+  ],
+  "description": "",
+  "options": {
+    "html": "<div id=\"optimizely-extension-${extension.$instance}\" class=\"asu-mock-up\">\n            <div class=\"pp-title-top\">\n                <p>{{{ extension.paragraph_text }}}</p>\n            </div>\n            <div class=\"flex-container\">\n                <div class=\"flex-items pp-item\">\n                    <div class=\"pp-image\">\n                        <img src=\"{{ extension.image_src_1 }}\" alt=\"Image 1\" class=\"pp-responsive-image\">\n                    </div>\n                    <div class=\"pp-title\">\n                        {{ extension.title_1 }}\n                    </div>\n                    <div class=\"pp-description\">\n                        {{ extension.description_1 }}\n                    </div>\n                  <div class=\"pp-cta\">\n                <a href=\"{{ extension.button_1 }}\" class=\"btn btn-primary border-radius mb-3\">Learn more</a>\n            </div>\n                </div>\n                <div class=\"flex-items pp-item\">\n                    <div class=\"pp-image\">\n                        <img src=\"{{ extension.image_src_2 }}\" alt=\"Image 2\" class=\"pp-responsive-image\">\n                    </div>\n                    <div class=\"pp-title\">\n                        {{ extension.title_2 }}\n                    </div>\n                    <div class=\"pp-description\">\n                        {{ extension.description_2 }}\n                    </div>\n                  <div class=\"pp-cta\">\n                <a href=\"{{ extension.button_2 }}\" class=\"btn btn-primary border-radius mb-3\">Learn more</a>\n            </div>\n                </div>\n            </div>\n        </div>",
+    "css": "\n.flex-container {\n            display: flex;\n            flex-direction: row;\n            flex-wrap: nowrap;\n            justify-content: center;\n            align-items: stretch;\n            align-content: stretch;\n          }\n          \n          .flex-items {\n            display: block;\n            flex-grow: 1;\n            flex-shrink: 1;\n            flex-basis: 0;\n            align-self: auto;\n            order: 0;\n          }\n        \n          .pp-item {\n            background-color: rgb(245, 245, 245);\n            padding: 10px;\n            margin: 0 10px;\n          }\n        \n          .pp-responsive-image {\n            width: 100%;\n            height: auto;\n          }\n\n          .pp-title-top {\n            text-align: center;\n          }\n                    \n          .pp-title {\n            padding: 20px 0 20px 0;\n            font-weight: bold;\n          }\n\n          .pp-description {\n            padding: 10px 0 40px 0;\n            height: auto;\n          }    ",
+    "apply_js": "/*\n * Editor now supports ES6 compliant code. Note that adding ES6\n * specific code to an experiment will break for users running\n * ES5-only browsers as code entered is not transpiled down to ES5.\n */\n\nconst utils = window.optimizely.get('utils');\n\nutils.waitForElement('.confirm-details > .card-body')\n.then(function(elem) {\n  // Prepend the extension HTML to the selected element\n  elem.insertAdjacentHTML('afterbegin', extension.$html);\n});\n",
+    "undo_js": "/*\n * Editor now supports ES6 compliant code. Note that adding ES6\n * specific code to an experiment will break for users running\n * ES5-only browsers as code entered is not transpiled down to ES5.\n */\n \n  const extensionElement = document.getElementById('optimizely-extension-' + extension.$instance);\nif (extensionElement) {\n  // Remove the extension element from its current parent\n  extensionElement.parentElement.removeChild(extensionElement);\n}"
+  }
+}
